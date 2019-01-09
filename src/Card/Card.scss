@@ -1,0 +1,23 @@
+.card {
+
+    &--left {
+        color: green;
+    }
+    &--right {
+        color: green;
+        float: right;
+    }
+
+    .card__name{
+        text-align: center;
+        font-size: 26px;
+    }
+}
+
+.card--full-screen {
+    width: 50%;
+    position: absolute;
+    height: 50%;
+    left: 25%;
+    top: 17%;
+}

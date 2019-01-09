@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import Cards from '../Cards'
 
-const cards = [1,2,3,5,8,13,21, '∞'];
+const cards = ['1', '2', '3', '5', '8', '13', '21', '∞', 'coffee'];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Settings />
+        {/* <Settings /> */}
         <Cards cards={cards} />
       </div>
     );

@@ -1,0 +1,25 @@
+* {box-sizing: border-box;}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    border: 2px solid #f76707;
+    border-radius: 5px;
+    background-color: #fff4e6;
+    grid-auto-rows: minmax(200px, auto);
+
+}
+
+.wrapper > div {
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+    cursor: pointer;
+    &:hover {
+        background-color: #af7630;
+    }
+}
+
