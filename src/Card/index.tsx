@@ -1,28 +1,17 @@
-import * as React from 'react';
+import React, { Component } from 'react';
+
+import PopUp from '../PopUp'
 import './Card.scss';
 
 interface Props {
   name: string
 }
 
-interface MyState {
+interface State {
     showPopup: boolean
 }
 
-// class Popup extends React.Component {
-//   render() {
-//     return (
-//       <div className='popup'>
-//         <div className='popup_inner'>
-//           <h1>{this.props.text}</h1>
-//         {/* <button onClick={this.props.closePopup}>close me</button> */}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-class Card extends React.Component<Props, MyState> {
+class Card extends React.Component<Props, State> {
 
   state = {
     showPopup: false
@@ -33,7 +22,12 @@ class Card extends React.Component<Props, MyState> {
     this.setState({ showPopup: true });
   }
 
-// function Card({ name }: Props) {
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+
   render () {
     const { name } = this.props;
       return (
@@ -46,10 +40,10 @@ class Card extends React.Component<Props, MyState> {
           </div>
           {this.state.showPopup ? 
             <div className="card--full-screen">
-              {/* <Popup
+              <PopUp
                 text={name}
-                // closePopup={this.togglePopup.bind(this)}
-              /> */}
+                closePopup={this.togglePopup.bind(this)}
+              />
             </div>
             : null
           }        

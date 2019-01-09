@@ -1,12 +1,11 @@
-import * as React from 'react';
+import React, { Component } from 'react';
+
 import Card from '../Card'
 import './Cards.scss';
 
 export interface Props {
-  cards: Array<string>;
+  cards: Array<string>
 }
-
-// card-list
 
 function Cards( { cards } : Props) {
   return (
