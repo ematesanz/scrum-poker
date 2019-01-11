@@ -26,12 +26,13 @@ class Cards extends Component<CardsProps, CardsState> {
   render () {
     const { cards } = this.props;
     const { id } = this.state;
+    const hasCountDown = true;
     return (
-      <div className="wrapper">
+      <section className="wrapper">
         { cards.map((card, idx) => <Card key={idx} id={idx} name={card} onClick={this.showCard} />) }
 
-        { this.state.showPopup && <PopUp text={cards[id]} closePopup={this.togglePopup} /> }
-      </div>
+        { this.state.showPopup && <PopUp text={cards[id]} hasCountDown={hasCountDown} closePopup={this.togglePopup} /> }
+      </section>
     )
   }
 }

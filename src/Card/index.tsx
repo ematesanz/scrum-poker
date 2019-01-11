@@ -19,12 +19,12 @@ const Card = (props: CardProps) => {
   const { id, name, onClick } = props;
 
   return (
-    <div className="card" onClick={()=>{onClick(id)}}>
+    <article className="card" onClick={()=>{onClick(id)}}>
       <span className="card--left"> { name } </span>
       <p>Scrum poker</p>
       <p className="card__name"> {name} </p>
       <span className="card--right"> { name } </span>
-    </div>
+    </article>
   )
 
 }

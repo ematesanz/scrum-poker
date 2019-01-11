@@ -1,15 +1,15 @@
 .card {
 
-    &--left {
-        color: green;
-    }
-    &--right {
-        color: green;
-        float: right;
-    }
+	&--left {
+		color: green;
+	}
+	&--right {
+		color: green;
+		float: right;
+	}
 
-    .card__name{
-        text-align: center;
-        font-size: 26px;
-    }
+	.card__name{
+		text-align: center;
+		font-size: 26px;
+	}
 }
