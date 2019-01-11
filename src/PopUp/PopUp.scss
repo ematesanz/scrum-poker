@@ -2,9 +2,17 @@
     position: absolute;
     width: 93.7%;
     height: 86%;
-    // width: 50%;
-    // position: absolute;
-    // height: 50%;
-    // left: 25%;
-    // top: 17%;
+
+    .popup__close {
+        float: right;
+        border:none;
+        background: none;
+        font-size: 3em;
+        cursor: pointer;
+    }
+
+    .popup__content {
+        font-size: 10em;
+        text-align: center;
+    }
 }

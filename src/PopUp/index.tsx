@@ -15,8 +15,8 @@ class PopUp extends React.Component<Props, State> {
 	render() {
 		return (
 		<div className='popup'>
-			<h1>{this.props.text}</h1>
-			<button onClick={this.props.closePopup}>close me</button>
+			<button className="popup__close" onClick={this.props.closePopup}>X</button>
+			<p className="popup__content">{this.props.text}</p>
 		</div>
 		);
 	}
