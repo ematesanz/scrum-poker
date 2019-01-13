@@ -9,11 +9,6 @@ interface CardProps {
   onClick: Function
 }
 
-// interface State {
-//     showPopup: boolean
-// }
-
-
 const Card = (props: CardProps) => {
 
   const { id, name, onClick } = props;

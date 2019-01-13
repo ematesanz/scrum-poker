@@ -1,7 +1,7 @@
 .popup {
     position: absolute;
     width: 91.5%;
-    height: 87.5%;
+    height: 95.5%;
 
     .popup__close {
         float: right;
@@ -14,5 +14,6 @@
     .popup__content {
         font-size: 10em;
         text-align: center;
+        padding-top: .3em;
     }
 }

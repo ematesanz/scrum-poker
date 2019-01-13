@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Card from '../Card'
+import Settings from '../Settings'
 import PopUp from '../PopUp'
 import './Cards.scss';
 
@@ -30,6 +31,7 @@ class Cards extends Component<CardsProps, CardsState> {
     return (
       <section className="wrapper">
         { cards.map((card, idx) => <Card key={idx} id={idx} name={card} onClick={this.showCard} />) }
+        <Settings/>
 
         { this.state.showPopup && <PopUp text={cards[id]} hasCountDown={hasCountDown} closePopup={this.togglePopup} /> }
       </section>
