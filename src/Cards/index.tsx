@@ -24,7 +24,7 @@ class Cards extends Component<CardsProps, CardsState> {
     return (
       <section className="wrapper">
         { cards.map((card, idx) => <Card key={idx} id={idx} name={card} />) }
-        <Settings/>
+        {/* <Settings/> */}
       </section>
     )
   }

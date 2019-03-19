@@ -4,9 +4,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: .75em;
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
     grid-auto-rows: minmax(100px, auto);
     padding: 1em;
     position: relative;

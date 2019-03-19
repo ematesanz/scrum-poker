@@ -41,9 +41,9 @@ class Card extends Component<CardProps, CardState> {
     return (
       <article className={className} onClick={this.openCard}>
         <span className="card--left"> { name } </span>
-        <p>Scrum poker</p>
+        {/* <p>Scrum poker</p> */}
         <p className="card__name"> {name} </p>
-        <span className="card--right"> { name } </span>
+        {/* <span className="card--right"> { name } </span> */}
         { isOpen && <span className="card__close" onClick={this.closeCard}>X</span> }
       </article>
     )
