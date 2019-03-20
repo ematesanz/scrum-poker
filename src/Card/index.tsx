@@ -9,23 +9,30 @@ interface CardProps {
 }
 
 interface CardState {
-  isOpen: boolean
+  isOpen: boolean,
+  isCountDown: boolean,
 }
 
 class Card extends Component<CardProps, CardState> {
   state = {
     isOpen: false,
+    isCountDown: false
   }
 
   openCard = () => {
-    const { isOpen } = this.state
+    const { isOpen, isCountDown } = this.state
     if (isOpen === false) this.setState({ isOpen: true });
+    if (isOpen === true && !isCountDown) {
+    const { isOpen, isCountDown } = this.state
+      this.setState({ isCountDown: true})
+      console.log('show Delay')
+    }
   }
 
 
   closeCard = () => {
     const { isOpen } = this.state
-    this.setState({ isOpen: !isOpen });
+    this.setState({ isOpen: !isOpen })
   }
 
   render () {
@@ -40,10 +47,9 @@ class Card extends Component<CardProps, CardState> {
 
     return (
       <article className={className} onClick={this.openCard}>
-        <span className="card--left"> { name } </span>
+        <span className="card__number"> { name } </span>
         {/* <p>Scrum poker</p> */}
         <p className="card__name"> {name} </p>
-        {/* <span className="card--right"> { name } </span> */}
         { isOpen && <span className="card__close" onClick={this.closeCard}>X</span> }
       </article>
     )
