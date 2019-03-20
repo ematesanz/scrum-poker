@@ -1,23 +1,6 @@
-* {box-sizing: border-box;}
-
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: .75em;
-    grid-auto-rows: minmax(100px, auto);
-    padding: 1em;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 400px;
 }
-
-.wrapper > article {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: .5em;
-    color: #d9480f;
-    cursor: pointer;
-    &:hover {
-        background-color: #e4b070;
-    }
-}
-
