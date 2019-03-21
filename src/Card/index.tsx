@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import PopUp from '../PopUp'
 import './Card.scss';
@@ -22,11 +22,7 @@ class Card extends Component<CardProps, CardState> {
   openCard = () => {
     const { isOpen, isCountDown } = this.state
     if (isOpen === false) this.setState({ isOpen: true });
-    if (isOpen === true && !isCountDown) {
-    const { isOpen, isCountDown } = this.state
-      this.setState({ isCountDown: true})
-      console.log('show Delay')
-    }
+    if (isOpen === true && !isCountDown) this.setState({ isCountDown: true })
   }
 
 
@@ -35,9 +31,14 @@ class Card extends Component<CardProps, CardState> {
     this.setState({ isOpen: !isOpen })
   }
 
+  toggleCountDown = () => {
+    const { isCountDown } = this.state
+    this.setState({ isCountDown: false })
+  }
+
   render () {
     const { id, name } = this.props
-    const { isOpen } = this.state
+    const { isOpen, isCountDown } = this.state
     let className = 'card'
     let closeBtn
     if (isOpen) {
@@ -46,12 +47,17 @@ class Card extends Component<CardProps, CardState> {
     }
 
     return (
-      <article className={className} onClick={this.openCard}>
-        <span className="card__number"> { name } </span>
-        {/* <p>Scrum poker</p> */}
-        <p className="card__name"> {name} </p>
-        { isOpen && <span className="card__close" onClick={this.closeCard}>X</span> }
-      </article>
+      <Fragment>
+        { isCountDown && <div className="count-down" onClick={this.toggleCountDown}>Count Down
+          
+        </div>}
+        <article className={className} onClick={this.openCard}>
+          <span className="card__number"> { name } </span>
+          {/* <p>Scrum poker</p> */}
+          <p className="card__name"> {name} </p>
+          { isOpen && <span className="card__close" onClick={this.closeCard}>X</span> }
+        </article>
+      </Fragment>
     )
   }
 }
