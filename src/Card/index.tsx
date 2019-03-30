@@ -48,12 +48,10 @@ class Card extends Component<CardProps, CardState> {
 
     return (
       <Fragment>
-        { isCountDown && <div className="count-down" onClick={this.toggleCountDown}>Count Down
-          
-        </div>}
+        { isCountDown && <PopUp />}
+
         <article className={className} onClick={this.openCard}>
           <span className="card__number"> { name } </span>
-          {/* <p>Scrum poker</p> */}
           <p className="card__name"> {name} </p>
           { isOpen && <span className="card__close" onClick={this.closeCard}>X</span> }
         </article>
@@ -61,5 +59,4 @@ class Card extends Component<CardProps, CardState> {
     )
   }
 }
-
 export default Card;

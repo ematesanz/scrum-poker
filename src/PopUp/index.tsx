@@ -2,21 +2,15 @@ import React, { Component, Fragment} from 'react';
 
 import './PopUp.scss';
 
-interface PopUpProps {
-	text: string,
-	hasCountDown: boolean,
-	closePopup: () => void
-}
-
 interface PopUpState {
-	hasCountDown: boolean,
 	countDown: number,
 	intervalId: any
 }
 
+interface PopUpProps {}
+
 class PopUp extends Component <PopUpProps, PopUpState> {
 	state = {
-		hasCountDown: this.props.hasCountDown,
 		countDown: 3,
 		intervalId: 0
 	}
@@ -36,19 +30,12 @@ class PopUp extends Component <PopUpProps, PopUpState> {
 	}
 
 	render () {
-		const { text, closePopup} = this.props;
-		let { hasCountDown, countDown } = this.state;
+		let { countDown } = this.state;
 		return (
-			<article className='popup'>
-				{ hasCountDown && countDown ?
-					<p className="popup__content">{countDown}</p> : 
-					<Fragment>
-						<button className="popup__close" onClick={closePopup}>X</button>
-						<p className="popup__content">{text}</p>
-					</Fragment>
-				}
-			</article>
-		);
+			countDown ? <article className='popup'>
+				<span className='popup__content'>{countDown}</span>
+			</article>  : null
+		)
 	}
 }
 
