@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Card from '../Card'
-import Settings from '../Settings'
+//import Settings from '../Settings'
 import './Cards.scss';
 
 interface CardsProps {
   cards: Array<string>
 }
 
-interface CardsState {
-  id: number
-}
+// const onClick = () => console.log('selected')
 
-class Cards extends Component<CardsProps, CardsState> {
-  state = {
-    id: 0
-  }
-  
-  render () {
-    const { cards } = this.props;
-    const { id } = this.state;
-    const hasCountDown = true;
-    return (
-      <section className="wrapper">
-        { cards.map((card, idx) => <Card key={idx} id={idx} name={card} />) }
-        {/* <Settings/> */}
-      </section>
-    )
-  }
+const Cards: React.FC<CardsProps> = ({cards}) => {
+  const [selectedCard, setSelectedCard] = useState(0)
+
+
+  return (
+    <section className="wrapper">
+    { cards.map((card, index) => <Card key={index} id={index} name={card}  />) }
+      {/* <Settings/> */}
+    </section>
+  )
 }
 
 export default Cards;
+
+//onClickSelected={onClick}

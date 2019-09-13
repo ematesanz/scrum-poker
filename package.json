@@ -7,14 +7,14 @@
     "@types/node": "10.12.18",
     "@types/react": "16.7.18",
     "@types/react-dom": "16.0.11",
-    "node-sass": "^4.11.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3",
-    "typescript": "3.2.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "jest-enzyme": "^7.0.1"
+    "jest-enzyme": "^7.0.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.0.0-next.68",
+    "typescript": "^3.7.0-dev.20190913"
   },
   "scripts": {
     "start": "react-scripts start",
