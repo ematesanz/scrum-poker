@@ -6,6 +6,7 @@ import './Card.scss';
 interface CardProps {
   id: number,
   name: string,
+  onClick: () => {},
 }
 
 interface CardState {

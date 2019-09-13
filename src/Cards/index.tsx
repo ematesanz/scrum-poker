@@ -8,20 +8,21 @@ interface CardsProps {
   cards: Array<string>
 }
 
-// const onClick = () => console.log('selected')
 
 const Cards: React.FC<CardsProps> = ({cards}) => {
   const [selectedCard, setSelectedCard] = useState(0)
-
+  
+  function onClick () {
+    console.log('selected')
+  }
+    
 
   return (
     <section className="wrapper">
-    { cards.map((card, index) => <Card key={index} id={index} name={card}  />) }
+    { cards.map((card, index) => <Card key={index} id={index} name={card} onClickSelected={onClick} />) }
       {/* <Settings/> */}
     </section>
   )
 }
 
 export default Cards;
-
-//onClickSelected={onClick}
